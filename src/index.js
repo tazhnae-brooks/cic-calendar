@@ -2,6 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-const Firstelement = <h6>cic calendar, NOICE!</h6>;
+class Calendar extends React.Component {
+    constructor(props){
+        super(props);
+    }
 
-ReactDOM.render(Firstelement, document.getElementById('root'));
+    render(){
+            return (
+            <div id="names" >
+
+            <h6>text</h6>
+
+            </div>
+        );
+    }
+
+}
+
+
+
+ReactDOM.render(< Calendar/>, document.getElementById('root'));
