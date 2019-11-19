@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './index.css';
 //import Message from './nullcalendartest'; 
-import Moveon from './nextmonth'; 
 
-class CalendarTwo extends Component{
-    render(){
-        return(
+class CalendarTwo extends Component {
+    render() {
+        return (
             <div id="calendar">
-                    <table>
+                <table>
                     <tr>
                         <th>Sunday</th>
                         <th>Monday</th>
@@ -17,63 +16,63 @@ class CalendarTwo extends Component{
                         <th>Friday</th>
                         <th>Saturday</th>
                     </tr>
-                    </table>
-                    <tr>
-                        <th>< Moveon/></th>
-                        <th>{null}</th>
-                        <th>{null}</th>
-                        <th>{null}</th>
-                        <th>{null}</th>
-                        <th>{null}</th>
-                        <th>{null}</th>
-                        <th>{null}</th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                </table>
+                <tr>
+                    <th></th>
+                    <th>{null}</th>
+                    <th>{null}</th>
+                    <th>{null}</th>
+                    <th>{null}</th>
+                    <th>{null}</th>
+                    <th>{null}</th>
+                    <th>{null}</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
 
-                    </tr><tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                </tr><tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
 
-                    </tr><tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                </tr><tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
 
-                    </tr><tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                </tr><tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
 
-                    </tr><tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                </tr><tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
 
-                    </tr>
+                </tr>
             </div>
         );
     }
