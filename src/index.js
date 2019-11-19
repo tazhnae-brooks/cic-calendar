@@ -1,24 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CalMonth from './month.js';
+import CalendarTwo from './calendartest.js';
+//import Calendar from './calendar.js';
+//import Moveon from './nextmonth.js';
 import './index.css';
 
-class Calendar extends React.Component {
-    constructor(props){
-        super(props);
-    }
 
+class CIC extends React.Component {
     render(){
             return (
-            <div id="names" >
+                <div id="something fancy" >
 
-            <h6>text</h6>
+                <CalMonth />
 
-            </div>
+                <CalendarTwo />
+                </div>
         );
     }
 
 }
 
 
-
-ReactDOM.render(< Calendar/>, document.getElementById('root'));
+ReactDOM.render(< CIC/>, document.getElementById('root'));

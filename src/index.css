@@ -7,4 +7,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/*calendar.js*/
 
+#month{
+  
+}
+
+table,th,td{
+
+border: 2px solid black;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+
+/* moveon.js*/
+#button{
+
+}
