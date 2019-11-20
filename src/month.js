@@ -2,37 +2,42 @@ import React, { Component } from 'react';
 import Moment from 'react-moment';
 import './index.css';
 
+// Set the format for all times 
+Moment.globalFormat = "MMMM YYYY" // November 2019
 class CalMonth extends Component {
 
     constructor(props) {
         super(props);
-        this.date = <Moment>{new Date()}</Moment>
         this.state = {
-            month: <Moment format="MMMM">{this.date}</Moment>
+            month: <Moment></Moment>
         };
-
+        this.monthOffset = 0
         this.previousMonth = this.previousMonth.bind(this);
         this.nextMonth = this.nextMonth.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.setState({ month: <Moment format="MMMM">{this.currentMonth}</Moment> })
-    // }
+    componentDidMount() {
+        this.setState(() => ({
+            month: <Moment>{new Date()}</Moment>
+        }));
+    }
 
     // componentWillUnmount() {
     // }
 
 
     previousMonth() {
+        this.monthOffset--
         this.setState(state => ({
-            month: <Moment subtract={{ months: 1 }} format="MMMM">{state.month}</Moment>
+            month: <Moment add={{ months: this.monthOffset }}>{this.state.month}</Moment>
         }));
     }
 
 
     nextMonth() {
+        this.monthOffset++
         this.setState(state => ({
-            month: <Moment add={{ months: 1 }} format="MMMM">{this.currentMonth}</Moment>
+            month: <Moment add={{ months: this.monthOffset }}>{this.state.month}</Moment>
         }));
     }
 
