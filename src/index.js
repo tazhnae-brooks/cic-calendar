@@ -1,19 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import CalMonth from './month.js';
-// import CalendarTwo from './calendartest.js';
-//import Calendar from './calendar.js';
-import './index.css';
+//import CalMonth from './month.js';
+import Navigation from './monthtest.js';
 
-
-class CIC extends React.Component {
+class CIC extends Component {
     render() {
         return (
             <div id="something fancy" >
-
-                <CalMonth />
-
-                {/* <CalendarTwo /> */}
+                <Navigation />
             </div>
         );
     }

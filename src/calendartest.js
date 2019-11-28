@@ -16,63 +16,64 @@ class CalendarTwo extends Component {
                         <th>Friday</th>
                         <th>Saturday</th>
                     </tr>
+                    <tr>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+
+                    </tr><tr>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+
+                    </tr><tr>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+
+                    </tr><tr>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+
+
+                    </tr><tr>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+                        <th>.</th>
+
+                    </tr>
                 </table>
-                <tr>
-                    <th></th>
-                    <th>{null}</th>
-                    <th>{null}</th>
-                    <th>{null}</th>
-                    <th>{null}</th>
-                    <th>{null}</th>
-                    <th>{null}</th>
-                    <th>{null}</th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-
-                </tr><tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-
-                </tr><tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-
-                </tr><tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-
-                </tr><tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-
-                </tr>
             </div>
         );
     }
