@@ -1,28 +1,25 @@
 import React, { Component } from 'react';
 import Moment from 'react-moment';
 import * as dateFns from 'date-fns';
-import './index.css';
-import WeekNav from './weektest';
+//import './index.css';
 //import { DayPicker } from 'react-day-picker';
 //import 'react-day-picker/lib/style.css';
 
 
 // Set the format for all times 
 
-class Navigation extends Component {
+class WeekNav extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             //month: <Moment></Moment>,
-            month: new Date(),
             week: new Date(),
             selectedDate: new Date(),
-            isHidden: true,
         };
         //this.monthOffset = 0
-        this.previousMonth = this.previousMonth.bind(this);
-        this.nextMonth = this.nextMonth.bind(this);
+        this.previousWeek = this.previousWeek.bind(this);
+        this.nextWeek = this.nextWeek.bind(this);
     }
 
     /*componentDidMount() {
@@ -35,26 +32,26 @@ class Navigation extends Component {
     // }
 
 
-    previousMonth = () =>{
+    previousWeek = () =>{
         //this.monthOffset--
         this.setState(state => ({
-            month: dateFns.subMonths(this.state.month, 1)//<Moment add={{ months: this.monthOffset }}>{this.state.month}</Moment>
+            week: dateFns.subWeeks(this.state.week, 1)//<Moment add={{ months: this.monthOffset }}>{this.state.month}</Moment>
         }));
     }
 
 
-    nextMonth = () => {
+    nextWeek = () => {
         //this.monthOffset++
         this.setState(state => ({
-            month: dateFns.addMonths(this.state.month, 1)//<Moment add={{ months: this.monthOffset }}>{this.state.month}</Moment>
+            week: dateFns.addWeeks(this.state.week, 1)//<Moment add={{ months: this.monthOffset }}>{this.state.month}</Moment>
         }));
     }
 
     renderDays(){
-        const dateFormat ="EEEE";
+        const dateFormat ="d";
         const days = [];
 
-        let startDate = dateFns.startOfWeek(this.state.month)
+        let startDate = dateFns.startOfWeek(this.state.week)
         for (let i = 0; i < 7; i++){
             days.push(
                 <div className="col col-center" key = {i}> 
@@ -66,11 +63,11 @@ class Navigation extends Component {
     }
 
     renderCells(){
-        const {month, selectedDate} = this.state;
-        const monthStart = dateFns.startOfMonth(month);
-        const monthEnd = dateFns.endOfMonth(monthStart);
-        const startDate = dateFns.startOfWeek(monthStart);
-        const endDate = dateFns.endOfWeek(monthEnd);
+        const {week, selectedDate} = this.state;
+        const weekStart = dateFns.startOfWeek(week);
+        const weekEnd = dateFns.endOfWeek(weekStart);
+        const startDate = dateFns.startOfWeek(weekStart);
+        const endDate = dateFns.endOfWeek(weekEnd);
 
         const dateFormat = "d";
         const rows = [];
@@ -83,23 +80,22 @@ class Navigation extends Component {
             for(let i = 0; i < 7; i++){
                 formattedDate = dateFns.format(day, dateFormat);
                 const cloneDay = day;
-                //const cloneWeek = week;
                 days.push(
                     <div className={`col cell ${ 
-                        ! (selectedDate) ? "selected" : dateFns.isSameDay(day, selectedDate) ? "selected" : "" ? "disabled" : ""}`} 
+                        ! dateFns.isSameWeek(day, weekStart) 
+                        ? "disabled": 
+                        dateFns.isSameDay(day, selectedDate) ? "selected" : "" }`}
 
                     key={day}
-                    onClick={() => this.onDateClick(dateFns.parse('ddd', 'ddd',cloneDay))}>
+                    onClick={() => this.onDateClick(dateFns.parse('e', 'e',cloneDay))}>
 
-                    {/*onClick={() => this.onWeekClick(dateFns.parse('ddd', 'ddd', cloneWeek))}> */}
+
                         <span className="number">{formattedDate}</span>
                         {/*<span className="bg">{formattedDate}</span>*/}
                     </div>
                 );
                 day = dateFns.addDays(day, 1);
             }
-
-            //possible use for linking week w/ specific date
             rows.push(
                 <div className="row" key={day}>{days}</div>
             );
@@ -108,76 +104,48 @@ class Navigation extends Component {
         return <div className="body">{rows}</div>;
     }
 
-
     onDateClick = day => {
         this.setState({
-            selectedDate: day,
+            selectedDate: day
         });
-        this.setState({
-            isHidden: !this.state.isHidden
-        })
-        //alert("show week pls")
     };
 
-    /*onWeekClick = week =>{
-        this.setState({
-            selectedDate: week
-        })
-    }*/
-
-    
     renderNav(){
         //Moment.globalFormat = "MMMM YYYY" // November 2019
-        const dateFormat ="MMMM yyyy";
+        const dateFormat ="MMMM";
 
         return(
             <div className="header row flex-middle">
                 <div className="col col-start">
                     <div className="eye"> 
-                    <button onClick={this.previousMonth}>Previous</button>
+                    <button onClick={this.previousWeek}>Previous</button>
                     </div>
                 </div>
             <div className="col col-center">
-                <span>{dateFns.format(this.state.month, dateFormat)}</span>
+                <span>{dateFns.format(this.state.week, dateFormat)}</span>
             </div>
             <div className="col col-end"></div>
             <div className="ball"> 
-            <button onClick={this.nextMonth}>Next</button>
+            <button onClick={this.nextWeek}>Next</button>
             </div>
         </div>
         );
 
     }
 
-    /*renderWeeks(){
-        <div>
-            <WeekNav onClick={(week) => week}/>
-        </div>
-        this.setState({
-            isHidden: !this.state.isHidden
-        })
-    }*/
+    weekRespond(){
+        
+    }
 
     render() {
         return (
-            <div className="calendar">
+            <div className="calendar2">
                 {/*<h1>{this.state.month}</h1>
                 <button onClick={this.previousMonth}>Previous</button>
         <button onClick={this.nextMonth}>Next</button>*/}
                 <div>{this.renderNav()}</div>
                 <div>{this.renderDays()}</div>
                 <div>{this.renderCells()}</div>
-                <div className="weekz">
-                {/*<button onClick={this.renderWeeks.bind(this)}>
-                    this week
-    </button>*/}
-                {!this.state.isHidden && < WeekNav />}
-                </div>
-                {/*<div>{this.renderWeeks()}</div>*/}
-
-                {/*<div>
-                    <WeekNav onClick={(week) => week}/>
-                </div>*/}
             </div>
 
         );
@@ -185,4 +153,4 @@ class Navigation extends Component {
 
 }
 
-export default Navigation;
+export default WeekNav;
